@@ -12,28 +12,28 @@ config:
         # openssl rsa -in jwt.pem
         privateKey: |
             -----BEGIN RSA PRIVATE KEY-----
-            MIICXAIBAAKBgQDBu/mmIt0R3OQu8+/kOi8zp3mis8rV/LLLwdE+zBtO8jW0FeLF
-            dZa+jxj9jcZnGMkN3sjUhs/dfuLA6jo62LG1I5D4t6/3E8QVLpBDvYWyQkL/3kXo
-            r23FJ3mHqTIIXUMBcu2qvUKVPB8rwE1F9OH8sSarjqfNd/WmQtGciJAaZQIDAQAB
-            AoGAPXghG/+P2S0XEXbAtM9pTqBizabyQrctG81hUOV9/KyJMZyIGVLYA5pvuXOU
-            cf3BPS9k1Vn49jReSguHckhzCZH939NICwSORGmqTAPDp9khofUgqKSDSXcbL88U
-            L7cMx3hf1X65Nr3EH7SyY94xb96wDZl7WohULkm+nXAyJzkCQQD57arRv1x2XC0l
-            fBgiNNOVwq29k+wSkwkYiyLSWkIwUAIkBApsQ5Ue0U3erIQDQ3kPvJ0X9hGyhTL2
-            5IZiNDv7AkEAxnDUl/ZJv0uUH3OvVhTenWn/2sjQjHTrv0tIhSVAVk8UOSFZOXLB
-            4aIbVDhHBWyahySeF6PFuP8Bya/JXe/VHwJAQDJ+SDZBR93Rcul3QYIUP0msWx/d
-            6b9+/KDwptusWMCUbC/lhX2uliXpPKNPnY79T7+BEqCQVyzDtItqwVrtdQJBAME6
-            Bti92kuqRV5m4Dl68tXm7FrWpbPO+et4W/JCNqaUNAX5Qg9dfgq+NcxJTGasvL+R
-            WVt9fj9IGC6SvAp7SVMCQBklsexBeiMb01xfofCmBW01uu4Gjy3v6kVpI1O03Tys
-            ePGSVC0+lWE9qQ8MjocoP4FjtikFMghn94VESVT21RM=
+            MIICWwIBAAKBgQCCFeaRBV9CW5pGB1eDQRfAo0/+0hzbjoRlXA4IdUQUkiUIj2ar
+            xrEsUE6z7RLThuyaDLH7ts1GF7ZSfZN1PmUA9SpLIbu1J/wxbID1Ps9xoiJwhQCe
+            rTNdB6gQIqKF8qKg0GYV2PDp3qK7aFMU+PrDrfIxDNvb+i2nTcAcgm2VtwIDAQAB
+            AoGAeNLsp5AMzW6VmSuijee8rxFA8NapNQhnUlmxMwvwIwcm3I+M9kmDMDybDSVK
+            kivEwMS/36MHgG3vyyiV+JTubBIywjqS4dV4to0aSaJyw/Z7l1W2H8FW84gm6cjH
+            zue8Rg9SMMV9i6wDQF7vkzCZHn4YbF+J4VApBZjjyJn6fekCQQD+4Q16TFSFUeFD
+            49zghsdARq/1wu2blfsQ2KNcwe7WwEaXrbIhFn8CNwBgdY+56xviyCqJ/Wd9FH9I
+            0W6kkx2NAkEAgqhabW5GHhXN6VlpP2It5jLIsSHRsJesB1yXQVJ+BSgCyd0IXGaY
+            Fw5K9oE4JfTfqyOFhnA/XPhcqUx949RFUwJABr1iwtoj3galQ0tSOum1eSClZIVM
+            DTIxGmfwIfLK4wjglQA11qQmpaNYsjRJoavy59NNNKrrwqX5G67WEyoEvQJAHLr+
+            X2/PNVBgHf7OOOTS6PqjzOd935IKfvfqPq/wDBw3OMJE02Sv7unyq+/QM/B7unsu
+            IljOZhgq8ANk71M/BwJAK7oOwVBV9IPkQ0Q5V7rEbIuN3FyN9UUQFh5IUl0QD3oA
+            46LtrPrWCRy2weVq+p9h1J/dx+Z2XMYnKTiBJTgb4Q==
             -----END RSA PRIVATE KEY-----
 
         # openssl rsa -in jwt.pem -pubout
         publicKey: |
             -----BEGIN PUBLIC KEY-----
-            MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBu/mmIt0R3OQu8+/kOi8zp3mi
-            s8rV/LLLwdE+zBtO8jW0FeLFdZa+jxj9jcZnGMkN3sjUhs/dfuLA6jo62LG1I5D4
-            t6/3E8QVLpBDvYWyQkL/3kXor23FJ3mHqTIIXUMBcu2qvUKVPB8rwE1F9OH8sSar
-            jqfNd/WmQtGciJAaZQIDAQAB
+            MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCCFeaRBV9CW5pGB1eDQRfAo0/+
+            0hzbjoRlXA4IdUQUkiUIj2arxrEsUE6z7RLThuyaDLH7ts1GF7ZSfZN1PmUA9SpL
+            Ibu1J/wxbID1Ps9xoiJwhQCerTNdB6gQIqKF8qKg0GYV2PDp3qK7aFMU+PrDrfIx
+            DNvb+i2nTcAcgm2VtwIDAQAB
             -----END PUBLIC KEY-----
         resourceIds: TEST-APPLICATION
 
