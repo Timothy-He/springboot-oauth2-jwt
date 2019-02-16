@@ -37,9 +37,3 @@ config:
             -----END PUBLIC KEY-----
         resourceIds: TEST-APPLICATION
 
-
-mongodb:
-  host: localhost:27017
-  name: test
-  user:
-  pwd:

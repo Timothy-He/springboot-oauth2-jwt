@@ -1,17 +1,28 @@
 package com.carzer.service;
 
 import com.carzer.model.DemoBaseClientDetails;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.Arrays;
+import java.util.Collections;
 
-/**
- * Created by WangHQ on 2017/7/6 0006.
- */
 @Component
-public interface DemoBaseClientDetailsDAO extends MongoRepository<DemoBaseClientDetails, String> {
-    List<DemoBaseClientDetails> findAll();
+public class DemoBaseClientDetailsDAO {
 
-    DemoBaseClientDetails findByClientId(String clientId);
+
+    public DemoBaseClientDetails findByClientId(String clientId){
+        if(clientId.equals("trusted")) {
+            DemoBaseClientDetails trustedDetails = new DemoBaseClientDetails();
+            trustedDetails.setClientId("trusted");
+            trustedDetails.setClientSecret("secret");
+            trustedDetails.setAuthorities(Collections.singletonList(new SimpleGrantedAuthority("ROLE_TRUSTED_CLIENT")));
+            trustedDetails.setAuthorizedGrantTypes(Arrays.asList("client_credentials", "password", "authorization_code", "refresh_token", "implicit"));
+            trustedDetails.setScope(Arrays.asList("read", "write"));
+            trustedDetails.setAccessTokenValiditySeconds(30 * 60);
+            trustedDetails.setRefreshTokenValiditySeconds(3 * 30 * 60);
+            return trustedDetails;
+        }
+        return null;
+    }
 }
