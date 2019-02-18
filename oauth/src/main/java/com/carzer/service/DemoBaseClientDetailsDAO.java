@@ -2,6 +2,7 @@ package com.carzer.service;
 
 import com.carzer.model.DemoBaseClientDetails;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -15,7 +16,7 @@ public class DemoBaseClientDetailsDAO {
         if(clientId.equals("trusted")) {
             DemoBaseClientDetails trustedDetails = new DemoBaseClientDetails();
             trustedDetails.setClientId("trusted");
-            trustedDetails.setClientSecret("secret");
+            trustedDetails.setClientSecret(new BCryptPasswordEncoder().encode("secret"));
             trustedDetails.setAuthorities(Collections.singletonList(new SimpleGrantedAuthority("ROLE_TRUSTED_CLIENT")));
             trustedDetails.setAuthorizedGrantTypes(Arrays.asList("client_credentials", "password", "authorization_code", "refresh_token", "implicit"));
             trustedDetails.setScope(Arrays.asList("read", "write"));
