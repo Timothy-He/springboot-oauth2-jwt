@@ -8,20 +8,19 @@ import org.springframework.stereotype.Component;
 public class BaseUserDAO {
 
 
-
-    public BaseUserDTO findByLoginName(String loginName){
-        if(loginName.equals("user")){
+    public BaseUserDTO findByLoginName(String loginName) {
+        if (loginName.equals("user")) {
             BaseUserDTO baseUser = new BaseUserDTO();
             baseUser.setLoginName("user");
             baseUser.setPassword(new BCryptPasswordEncoder().encode("user"));
             baseUser.setRoles(new String[]{"ROLE_USER"});
             return baseUser;
         }
-        if(loginName.equals("admin")){
+        if (loginName.equals("admin")) {
             BaseUserDTO adminUser = new BaseUserDTO();
             adminUser.setLoginName("admin");
             adminUser.setPassword(new BCryptPasswordEncoder().encode("admin"));
-            adminUser.setRoles(new String[]{"ROLE_USER","ROLE_ADMIN"});
+            adminUser.setRoles(new String[]{"ROLE_USER", "ROLE_ADMIN"});
             return adminUser;
         }
         return null;

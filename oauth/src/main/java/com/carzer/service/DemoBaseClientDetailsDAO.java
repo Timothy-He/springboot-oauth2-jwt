@@ -12,8 +12,8 @@ import java.util.Collections;
 public class DemoBaseClientDetailsDAO {
 
 
-    public DemoBaseClientDetails findByClientId(String clientId){
-        if(clientId.equals("trusted")) {
+    public DemoBaseClientDetails findByClientId(String clientId) {
+        if (clientId.equals("trusted")) {
             DemoBaseClientDetails trustedDetails = new DemoBaseClientDetails();
             trustedDetails.setClientId("trusted");
             trustedDetails.setClientSecret(new BCryptPasswordEncoder().encode("secret"));

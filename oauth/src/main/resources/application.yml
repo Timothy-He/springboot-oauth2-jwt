@@ -1,5 +1,5 @@
 server:
-    port: 8081
+  port: 8081
 
 #
 # IMPORTANT NOTICE: 
@@ -7,33 +7,33 @@ server:
 #
 
 config:
-    oauth2:
-        # openssl genrsa -out jwt.pem 2048
-        # openssl rsa -in jwt.pem
-        privateKey: |
-            -----BEGIN RSA PRIVATE KEY-----
-            MIICWwIBAAKBgQCCFeaRBV9CW5pGB1eDQRfAo0/+0hzbjoRlXA4IdUQUkiUIj2ar
-            xrEsUE6z7RLThuyaDLH7ts1GF7ZSfZN1PmUA9SpLIbu1J/wxbID1Ps9xoiJwhQCe
-            rTNdB6gQIqKF8qKg0GYV2PDp3qK7aFMU+PrDrfIxDNvb+i2nTcAcgm2VtwIDAQAB
-            AoGAeNLsp5AMzW6VmSuijee8rxFA8NapNQhnUlmxMwvwIwcm3I+M9kmDMDybDSVK
-            kivEwMS/36MHgG3vyyiV+JTubBIywjqS4dV4to0aSaJyw/Z7l1W2H8FW84gm6cjH
-            zue8Rg9SMMV9i6wDQF7vkzCZHn4YbF+J4VApBZjjyJn6fekCQQD+4Q16TFSFUeFD
-            49zghsdARq/1wu2blfsQ2KNcwe7WwEaXrbIhFn8CNwBgdY+56xviyCqJ/Wd9FH9I
-            0W6kkx2NAkEAgqhabW5GHhXN6VlpP2It5jLIsSHRsJesB1yXQVJ+BSgCyd0IXGaY
-            Fw5K9oE4JfTfqyOFhnA/XPhcqUx949RFUwJABr1iwtoj3galQ0tSOum1eSClZIVM
-            DTIxGmfwIfLK4wjglQA11qQmpaNYsjRJoavy59NNNKrrwqX5G67WEyoEvQJAHLr+
-            X2/PNVBgHf7OOOTS6PqjzOd935IKfvfqPq/wDBw3OMJE02Sv7unyq+/QM/B7unsu
-            IljOZhgq8ANk71M/BwJAK7oOwVBV9IPkQ0Q5V7rEbIuN3FyN9UUQFh5IUl0QD3oA
-            46LtrPrWCRy2weVq+p9h1J/dx+Z2XMYnKTiBJTgb4Q==
-            -----END RSA PRIVATE KEY-----
+  oauth2:
+    # openssl genrsa -out jwt.pem 2048
+    # openssl rsa -in jwt.pem
+    privateKey: |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIICWwIBAAKBgQCCFeaRBV9CW5pGB1eDQRfAo0/+0hzbjoRlXA4IdUQUkiUIj2ar
+      xrEsUE6z7RLThuyaDLH7ts1GF7ZSfZN1PmUA9SpLIbu1J/wxbID1Ps9xoiJwhQCe
+      rTNdB6gQIqKF8qKg0GYV2PDp3qK7aFMU+PrDrfIxDNvb+i2nTcAcgm2VtwIDAQAB
+      AoGAeNLsp5AMzW6VmSuijee8rxFA8NapNQhnUlmxMwvwIwcm3I+M9kmDMDybDSVK
+      kivEwMS/36MHgG3vyyiV+JTubBIywjqS4dV4to0aSaJyw/Z7l1W2H8FW84gm6cjH
+      zue8Rg9SMMV9i6wDQF7vkzCZHn4YbF+J4VApBZjjyJn6fekCQQD+4Q16TFSFUeFD
+      49zghsdARq/1wu2blfsQ2KNcwe7WwEaXrbIhFn8CNwBgdY+56xviyCqJ/Wd9FH9I
+      0W6kkx2NAkEAgqhabW5GHhXN6VlpP2It5jLIsSHRsJesB1yXQVJ+BSgCyd0IXGaY
+      Fw5K9oE4JfTfqyOFhnA/XPhcqUx949RFUwJABr1iwtoj3galQ0tSOum1eSClZIVM
+      DTIxGmfwIfLK4wjglQA11qQmpaNYsjRJoavy59NNNKrrwqX5G67WEyoEvQJAHLr+
+      X2/PNVBgHf7OOOTS6PqjzOd935IKfvfqPq/wDBw3OMJE02Sv7unyq+/QM/B7unsu
+      IljOZhgq8ANk71M/BwJAK7oOwVBV9IPkQ0Q5V7rEbIuN3FyN9UUQFh5IUl0QD3oA
+      46LtrPrWCRy2weVq+p9h1J/dx+Z2XMYnKTiBJTgb4Q==
+      -----END RSA PRIVATE KEY-----
 
-        # openssl rsa -in jwt.pem -pubout
-        publicKey: |
-            -----BEGIN PUBLIC KEY-----
-            MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCCFeaRBV9CW5pGB1eDQRfAo0/+
-            0hzbjoRlXA4IdUQUkiUIj2arxrEsUE6z7RLThuyaDLH7ts1GF7ZSfZN1PmUA9SpL
-            Ibu1J/wxbID1Ps9xoiJwhQCerTNdB6gQIqKF8qKg0GYV2PDp3qK7aFMU+PrDrfIx
-            DNvb+i2nTcAcgm2VtwIDAQAB
-            -----END PUBLIC KEY-----
-        resourceIds: TEST-APPLICATION
+    # openssl rsa -in jwt.pem -pubout
+    publicKey: |
+      -----BEGIN PUBLIC KEY-----
+      MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCCFeaRBV9CW5pGB1eDQRfAo0/+
+      0hzbjoRlXA4IdUQUkiUIj2arxrEsUE6z7RLThuyaDLH7ts1GF7ZSfZN1PmUA9SpL
+      Ibu1J/wxbID1Ps9xoiJwhQCerTNdB6gQIqKF8qKg0GYV2PDp3qK7aFMU+PrDrfIx
+      DNvb+i2nTcAcgm2VtwIDAQAB
+      -----END PUBLIC KEY-----
+    resourceIds: TEST-APPLICATION
 

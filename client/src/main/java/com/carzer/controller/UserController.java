@@ -30,12 +30,12 @@ class UserController {
     public ModelAndView home() {
         String token = oAuth2Client.getOauth2Token(resourceURI);
         System.out.println(token);
-        if(!StringUtils.isEmpty(token)) token="redirect:"+resourceURI+"?access_token="+token;
+        if (!StringUtils.isEmpty(token)) token = "redirect:" + resourceURI + "?access_token=" + token;
         return new ModelAndView(token);
     }
 
     @RequestMapping("/hello")
-    public String hello(){
+    public String hello() {
         restTemplate.getOAuth2ClientContext().getAccessTokenRequest().set("username", "test");
         restTemplate.getOAuth2ClientContext().getAccessTokenRequest().set("password", "test");
         String token = restTemplate.getAccessToken().toString();

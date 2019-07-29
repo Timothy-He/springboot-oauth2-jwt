@@ -1,7 +1,6 @@
 package com.carzer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.stereotype.Component;
@@ -16,12 +15,11 @@ public class OAuth2Client {
     @Autowired
     private OAuth2RestOperations restTemplate;
 
-    public String getOauth2Token(String resourceURI)
-    {
-        String result="";
+    public String getOauth2Token(String resourceURI) {
+        String result = "";
         restTemplate.getForObject(resourceURI, Map.class);
         OAuth2AccessToken testToken = restTemplate.getAccessToken();
-        if(testToken != null){
+        if (testToken != null) {
             result = testToken.getValue();
         }
         return result;
