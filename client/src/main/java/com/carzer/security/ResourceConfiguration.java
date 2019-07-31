@@ -37,8 +37,8 @@ public class ResourceConfiguration {
     /**
      * The heart of our interaction with the resource; handles redirection for authentication, access tokens, etc.
      *
-     * @param oauth2ClientContext
-     * @return
+     * @param oauth2ClientContext OAuth2ClientContext
+     * @return OAuth2RestOperations
      */
     @Bean
     public OAuth2RestOperations restTemplate(OAuth2ClientContext oauth2ClientContext) {

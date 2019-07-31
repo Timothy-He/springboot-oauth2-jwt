@@ -12,8 +12,13 @@ import java.util.Map;
  */
 @Component
 public class OAuth2Client {
+
+    private final OAuth2RestOperations restTemplate;
+
     @Autowired
-    private OAuth2RestOperations restTemplate;
+    public OAuth2Client(OAuth2RestOperations restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public String getOauth2Token(String resourceURI) {
         String result = "";

@@ -25,8 +25,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final Logger log = LoggerFactory.getLogger(SecurityConfig.class);
 
+    private final BaseUserDAO baseUserDAO;
+
     @Autowired
-    private BaseUserDAO baseUserDAO;
+    public SecurityConfig(BaseUserDAO baseUserDAO) {
+        this.baseUserDAO = baseUserDAO;
+    }
 
     @Autowired // <-- This is crucial otherwise Spring Boot creates its own
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

@@ -30,11 +30,15 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Value("${config.oauth2.publicKey}")
     private String publicKey;
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
+
+    private final DemoBaseClientDetailsDAO demoBaseClientDetailsDAO;
 
     @Autowired
-    private DemoBaseClientDetailsDAO demoBaseClientDetailsDAO;
+    public AuthorizationServerConfig(AuthenticationManager authenticationManager, DemoBaseClientDetailsDAO demoBaseClientDetailsDAO) {
+        this.authenticationManager = authenticationManager;
+        this.demoBaseClientDetailsDAO = demoBaseClientDetailsDAO;
+    }
 
     @Bean
     public JwtAccessTokenConverter tokenEnhancer() {
@@ -53,11 +57,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      * Defines the security constraints on the token endpoints /oauth/token_key and /oauth/check_token
      * Client credentials are required to access the endpoints
      *
-     * @param oauthServer
-     * @throws Exception
+     * @param oauthServer AuthorizationServerSecurityConfigurer
      */
     @Override
-    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+    public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
         oauthServer
                 .tokenKeyAccess("isAnonymous() || hasRole('ROLE_TRUSTED_CLIENT')") // permitAll()
                 .checkTokenAccess("hasRole('TRUSTED_CLIENT')"); // isAuthenticated()
@@ -66,11 +69,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     /**
      * Defines the authorization and token endpoints and the token services
      *
-     * @param endpoints
-     * @throws Exception
+     * @param endpoints AuthorizationServerEndpointsConfigurer
      */
     @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints
 
                 // Which authenticationManager should be used for the password grant
@@ -90,7 +92,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Bean
     public ClientDetailsService myClientDetailsService() {
-        return clientId -> demoBaseClientDetailsDAO.findByClientId(clientId);
+        return demoBaseClientDetailsDAO::findByClientId;
     }
 
     @Bean

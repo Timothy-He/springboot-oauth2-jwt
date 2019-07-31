@@ -11,14 +11,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 class UserController {
-    @Autowired
-    private OAuth2Client oAuth2Client;
 
     @Value("${config.oauth2.resourceURI}")
     private String resourceURI;
 
+    private final OAuth2Client oAuth2Client;
+
+    private final OAuth2RestTemplate restTemplate;
+
     @Autowired
-    private OAuth2RestTemplate restTemplate;
+    public UserController(OAuth2Client oAuth2Client, OAuth2RestTemplate restTemplate) {
+        this.oAuth2Client = oAuth2Client;
+        this.restTemplate = restTemplate;
+    }
 
     /*@RequestMapping("/")
     public JsonNode home() {
@@ -38,8 +43,7 @@ class UserController {
     public String hello() {
         restTemplate.getOAuth2ClientContext().getAccessTokenRequest().set("username", "test");
         restTemplate.getOAuth2ClientContext().getAccessTokenRequest().set("password", "test");
-        String token = restTemplate.getAccessToken().toString();
-        return token;
+        return restTemplate.getAccessToken().toString();
     }
 
 }
