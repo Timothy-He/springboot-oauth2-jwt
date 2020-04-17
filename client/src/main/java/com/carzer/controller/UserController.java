@@ -31,7 +31,7 @@ class UserController {
         return node;
     }*/
 
-    @RequestMapping("/")
+    @RequestMapping
     public ModelAndView home() {
         String token = oAuth2Client.getOauth2Token(resourceURI);
         System.out.println(token);
